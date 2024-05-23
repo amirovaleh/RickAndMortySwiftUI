@@ -20,7 +20,6 @@ final class HTTPClient {
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method.rawValue
-        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         urlRequest.timeoutInterval = 60
         
         if let requestBody = body {
