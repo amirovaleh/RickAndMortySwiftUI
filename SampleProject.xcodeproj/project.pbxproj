@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F04CD3F2BFFDEDC005C617D /* CharacterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F04CD3E2BFFDEDC005C617D /* CharacterRepository.swift */; };
+		5F04CD412BFFE45E005C617D /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F04CD402BFFE45E005C617D /* CharacterModel.swift */; };
+		5F04CD482BFFE809005C617D /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F04CD472BFFE809005C617D /* Results.swift */; };
 		5FDC4F432BFF2C1900A67571 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDC4F422BFF2C1900A67571 /* HTTPMethod.swift */; };
 		5FDC4F452BFF2D6400A67571 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDC4F442BFF2D6400A67571 /* HTTPClient.swift */; };
 		5FDC4F492BFF2D9D00A67571 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDC4F482BFF2D9D00A67571 /* EndPoint.swift */; };
@@ -20,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F04CD3E2BFFDEDC005C617D /* CharacterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRepository.swift; sourceTree = "<group>"; };
+		5F04CD402BFFE45E005C617D /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
+		5F04CD472BFFE809005C617D /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
 		5FDC4F422BFF2C1900A67571 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		5FDC4F442BFF2D6400A67571 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		5FDC4F482BFF2D9D00A67571 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
@@ -44,6 +50,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F04CD3D2BFFDEAB005C617D /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				5F04CD3E2BFFDEDC005C617D /* CharacterRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		5F04CD422BFFE7A8005C617D /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				5F04CD432BFFE7AD005C617D /* Content */,
+				5F04CD442BFFE7B1005C617D /* ViewModel */,
+				5F04CD462BFFE7BB005C617D /* View */,
+				5F04CD452BFFE7B8005C617D /* Model */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		5F04CD432BFFE7AD005C617D /* Content */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		5F04CD442BFFE7B1005C617D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5F04CD452BFFE7B8005C617D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5F04CD472BFFE809005C617D /* Results.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5F04CD462BFFE7BB005C617D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		5FDC4F3C2BFF29C900A67571 /* HTTPClient */ = {
 			isa = PBXGroup;
 			children = (
@@ -66,7 +120,6 @@
 			isa = PBXGroup;
 			children = (
 				5FDC4F4E2BFF508B00A67571 /* NetworkError.swift */,
-				5FDC4F542BFF53BA00A67571 /* ErrorModel.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -74,29 +127,9 @@
 		5FDC4F3F2BFF2A6600A67571 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5FDC4F542BFF53BA00A67571 /* ErrorModel.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		5FDC4F402BFF2A6E00A67571 /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Manager;
-			sourceTree = "<group>";
-		};
-		5FDC4F412BFF2A7100A67571 /* JSON */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = JSON;
-			sourceTree = "<group>";
-		};
-		5FDC4F4A2BFF317800A67571 /* Extentions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extentions;
 			sourceTree = "<group>";
 		};
 		5FDC4F582BFF5CEB00A67571 /* UI */ = {
@@ -111,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				5FDC4F5B2BFF5D0100A67571 /* Main */,
+				5F04CD422BFFE7A8005C617D /* Detail */,
 			);
 			path = Present;
 			sourceTree = "<group>";
@@ -137,6 +171,7 @@
 		5FDC4F5D2BFF5D0D00A67571 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5F04CD402BFFE45E005C617D /* CharacterModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -202,12 +237,10 @@
 		5FFE41E42BFF0DD2004A8B37 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				5FDC4F4A2BFF317800A67571 /* Extentions */,
 				5FDC4F3C2BFF29C900A67571 /* HTTPClient */,
+				5F04CD3D2BFFDEAB005C617D /* Repository */,
 				5FDC4F3D2BFF29D800A67571 /* Endpoint */,
 				5FDC4F3F2BFF2A6600A67571 /* Model */,
-				5FDC4F412BFF2A7100A67571 /* JSON */,
-				5FDC4F402BFF2A6E00A67571 /* Manager */,
 				5FDC4F3E2BFF2A0C00A67571 /* Errors */,
 			);
 			path = Data;
@@ -284,10 +317,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FFE41D82BFF0DC0004A8B37 /* ContentView.swift in Sources */,
+				5F04CD412BFFE45E005C617D /* CharacterModel.swift in Sources */,
 				5FFE41D62BFF0DC0004A8B37 /* SampleProjectApp.swift in Sources */,
+				5F04CD3F2BFFDEDC005C617D /* CharacterRepository.swift in Sources */,
 				5FDC4F492BFF2D9D00A67571 /* EndPoint.swift in Sources */,
 				5FDC4F4F2BFF508B00A67571 /* NetworkError.swift in Sources */,
 				5FDC4F512BFF526100A67571 /* EndPointProtocol.swift in Sources */,
+				5F04CD482BFFE809005C617D /* Results.swift in Sources */,
 				5FDC4F552BFF53BA00A67571 /* ErrorModel.swift in Sources */,
 				5FDC4F452BFF2D6400A67571 /* HTTPClient.swift in Sources */,
 				5FDC4F432BFF2C1900A67571 /* HTTPMethod.swift in Sources */,
@@ -431,6 +467,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -438,9 +475,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.amirovaleh.SampleProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -459,6 +500,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -466,9 +508,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.amirovaleh.SampleProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

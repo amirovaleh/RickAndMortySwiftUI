@@ -8,13 +8,13 @@
 import Foundation
 
 protocol EndPointProtocol {
-    var baseUrl: String { get }
+    var baseURL: String { get }
     var url: String { get }
 }
 
 extension EndPointProtocol {
     
-    var baseUrl: String {
-        return "https://dummyjson.com"
+    var baseURL: String {
+        return "https://rickandmortyapi.com/api"
     }
 }

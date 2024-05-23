@@ -8,24 +8,16 @@
 import Foundation
 
 enum EndPoint: EndPointProtocol {
-    case main(Users)
+    
+    case character
+    case singleCharacter(Int)
     
     var url: String {
         switch self {
-        case .main(let users):
-            return users.url
-        }
-    }
-}
-
-
-enum Users: EndPointProtocol {
-    case getUsers
-    
-    var url: String {
-        switch self {
-        case .getUsers:
-            return "\(baseUrl)/user"
+        case .character:
+            return "\(baseURL)/character"
+        case .singleCharacter(let id):
+            return "\(baseURL)/character/\(id)"
         }
     }
 }
