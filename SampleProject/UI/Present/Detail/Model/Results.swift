@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Results: Codable {
+struct Results: Codable, Identifiable {
+    
     let id: Int?
     let name, status, species, type: String?
     let gender: String?

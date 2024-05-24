@@ -8,5 +8,5 @@
 import Foundation
 
 struct CharacterModel: Codable {
-    let results: [Results]
+    var results: [Results]
 }
