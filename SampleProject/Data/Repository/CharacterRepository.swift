@@ -12,6 +12,19 @@ protocol DICharacterRepository {
     func getID(id: Int, completion: @escaping(Result<Results, NetworkError>) -> Void)
 }
 
+class MockCharacterRepository: DICharacterRepository {
+    func getCharacter(completion: @escaping (Result<CharacterModel, NetworkError>) -> Void) {
+        completion(.success(CharacterModel(results: [Results(id: 1, name: "sa", status: "SASA", species: "SASAS", type: "dad", gender: "FSF", origin: nil, location: nil, image: "", episode: [""] , url: "", created: "")])))
+    }
+    
+    func getID(id: Int, completion: @escaping (Result<Results, NetworkError>) -> Void) {
+        completion(.failure(.badParsing))
+    }
+    
+    
+    
+}
+
 class CharacterRepository: DICharacterRepository {
     
     let httpClient: HTTPClient = .shared
