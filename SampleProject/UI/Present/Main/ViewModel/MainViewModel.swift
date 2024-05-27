@@ -9,15 +9,25 @@ import Foundation
 
 class MainViewModel: ObservableObject {
     
-    private let repository: DICharacterRepository
+    private let repository = CharacterRepository()
     
+    @Published var filteredData: [Results] = []
     
-    @Published var charactersData: [Results] = []
+    private var allData: [Results] = []
     
-    init(repository: DICharacterRepository) {
-        self.repository = repository
+    func search(text: String) {
+        if !text.isEmpty {
+            filteredData.removeAll()
+            allData.forEach { item in
+                guard let name = item.name else { return }
+                if name.prefix(text.count).lowercased().contains(text.lowercased()) {
+                    filteredData.append(item)
+                }
+            }
+        } else {
+            filteredData = allData
+        }
     }
-    
     
     func fetchData() {
         
@@ -25,11 +35,11 @@ class MainViewModel: ObservableObject {
             switch result {
             case .success(let result):
                 DispatchQueue.main.async {
-                    self.charactersData = result.results
+                    self.allData = result.results
+                    self.filteredData = result.results
                 }
             case .failure(let error):
-                print(error.errorDescription)
-                print("sen get Veysəl gəlsin")
+                print(error.localizedDescription)
             }
         }
     }

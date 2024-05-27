@@ -17,9 +17,9 @@ final class HTTPClient {
     ///   - endPoint: gives developer the ability to choose which api to send a request to
     ///   - method: gives deveoper the ability to choose which type of request we want
     ///   - completion: returned generic type information and custom error type
-    private func request<T: Decodable>(endPoint: EndPoint, method: HTTPMethod, body: Any?, completion: @escaping(T?, NetworkError?) -> Void) {
+    private func request<T: Decodable>(endPoint: EndPoint, method: HTTPMethod, body: Data?, completion: @escaping(T?, Error?) -> Void) {
         guard let url = URL(string: endPoint.url) else {
-            completion(nil, .badUrl)
+            completion(nil, NetworkError.badUrl)
             return
         }
         
@@ -28,18 +28,7 @@ final class HTTPClient {
         urlRequest.timeoutInterval = 60
         
         if let requestBody = body {
-            
-            do {
-                if let data = requestBody as? Data {
-                    urlRequest.httpBody = data
-                } else {
-                    let json = try JSONSerialization.data(withJSONObject: requestBody)
-                    urlRequest.httpBody = json
-                }
-            }
-            catch {
-                print(error)
-            }
+                    urlRequest.httpBody = requestBody
         }
         
         URLSession.shared.dataTask(with: urlRequest) { data, response, error in
@@ -49,24 +38,24 @@ final class HTTPClient {
         .resume()
     }
     
-    func checkError<T: Decodable>(error: Error?, completion: @escaping(T?, NetworkError?) -> Void) {
+    func checkError<T: Decodable>(error: Error?, completion: @escaping(T?, Error?) -> Void) {
         if let error {
-            completion(nil, .unknowned)
+            completion(nil, NetworkError.unknowned)
             print(error)
             
             if let urlError = error as? URLError {
                 if urlError.code == .timedOut {
-                    completion(nil, .timeOut)
+                    completion(nil, NetworkError.timeOut)
                 } else if urlError.code == .badURL {
-                    completion(nil, .badUrl)
+                    completion(nil, NetworkError.badUrl)
                 } else if urlError.code == .notConnectedToInternet {
-                    completion(nil, .noInternetConnection)
+                    completion(nil, NetworkError.noInternetConnection)
                 }
             }
         }
     }
     
-    func checkStatus<T: Decodable>(response: URLResponse? , data: Data?, urlRequest: URLRequest, method: HTTPMethod, completion: @escaping(T?, NetworkError?) -> Void) {
+    func checkStatus<T: Decodable>(response: URLResponse? , data: Data?, urlRequest: URLRequest, method: HTTPMethod, completion: @escaping(T?, Error?) -> Void) {
         
         if let response = response as? HTTPURLResponse {
             guard response.statusCode == 200 else {
@@ -85,21 +74,20 @@ final class HTTPClient {
                     
                     switch response.statusCode {
                     case 400:
-                        completion(nil, .badRequest(errorDecode.message))
+                        completion(nil, NetworkError.badRequest(errorDecode.message))
                     case 401...403:
-                        completion(nil, .unauthorization)
+                        completion(nil, NetworkError.unauthorization)
                     case 404:
-                        completion(nil, .notFound(errorDecode.message))
+                        completion(nil, NetworkError.notFound(errorDecode.message))
                     case 500:
-                        completion(nil, .unknowned)
+                        completion(nil, NetworkError.unknowned)
                     default:
-                        completion(nil, .statusError)
+                        completion(nil, NetworkError.statusError)
                     }
                 }
                 catch {
                     print(error)
                 }
-                
                 return
             }
             
@@ -111,7 +99,7 @@ final class HTTPClient {
             }
             catch {
                 self.decodingError(error: error)
-                completion(nil, .badParsing)
+                completion(nil, NetworkError.badParsing)
             }
         }
     }
@@ -141,9 +129,9 @@ final class HTTPClient {
 }
 
 extension HTTPClient {
-    func GET<T>(endPoint: EndPoint, completion: @escaping(T?, NetworkError?) -> Void) where T : Decodable {
-        self.request(endPoint: endPoint, method: .GET, body: nil) { (data: T?, error: NetworkError?) in
-            if let err = error {
+    func GET<T>(endPoint: EndPoint, completion: @escaping(T?, Error?) -> Void) where T : Decodable {
+        self.request(endPoint: endPoint, method: .GET, body: nil) { (data: T?, error: Error?) in
+            if let err = error as? NetworkError {
                 completion(nil, err)
                 return
             }

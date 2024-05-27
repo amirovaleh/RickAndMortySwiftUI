@@ -10,13 +10,20 @@ import SDWebImageSwiftUI
 
 struct MainView: View {
     
-    @StateObject var vm = MainViewModel(repository: CharacterRepository())
+    @StateObject var vm = MainViewModel()
+    
+    @State var text: String = ""
     
     var body: some View {
         NavigationStack {
             ScrollView {
-                GridView(characterItem: vm.charactersData)
+                SearchTextField(text: $text)
+                    .onChange(of: text) { oldValue, newValue in
+                        vm.search(text: newValue)
+                    }
+                GridView(characterItem: vm.filteredData)
             }
+            .background(Color.customPurple)
             .onAppear {
                 vm.fetchData()
             }
@@ -27,9 +34,3 @@ struct MainView: View {
 #Preview {
     MainView()
 }
-
-
-//List(vm.charactersData) { item in
-//    let url = URL(string: item.image ?? "")
-//    WebImage(url: url)
-//}
