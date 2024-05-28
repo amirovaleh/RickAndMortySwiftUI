@@ -11,46 +11,55 @@ import SDWebImageSwiftUI
 struct DetailView: View {
     
     @StateObject var vm = DetailViewModel()
+    @Environment(\.dismiss) private var dismiss
+
     var id: Int
     var body: some View {
-        ZStack {
-            Color.customPurple
-                .ignoresSafeArea()
-            VStack {
-                Text(vm.character.name ?? "Can't Found Data")
-                    .font(.system(size: 40))
-                VStack(alignment: .leading) {
-                    let url = URL(string: vm.character.image ?? "")
-                    WebImage(url: url) { image in
-                        image
-                            .image?.resizable()
-                            .scaledToFit()
-                            .frame(width: 340)
-                            .clipShape(.rect(cornerRadius: 25))
+        NavigationView {
+            ZStack {
+                Color.customPurple
+                    .ignoresSafeArea()
+                VStack {
+                    Text(vm.character.name ?? "Can't Found Data")
+                        .font(.system(size: 40))
+                    VStack(alignment: .leading) {
+                        HeaderView(character: vm.character)
+                        Spacer().frame(height: 30)
+                            VStack(alignment: .leading) {
+                                InfoView(character: vm.character)
+                            }
+                        Spacer()
                     }
-                    
-                    Spacer().frame(height: 30)
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text("Status: \(vm.character.status ?? "") ")
-                            Text("Gender: \(vm.character.gender ?? "") ")
-                            Text("Species: \(vm.character.species ?? "") ")
-                            Text("Type: \(vm.character.type ?? "") ")
-                        }
+                    .onAppear {
+                        vm.fetchData(id: id)
                     }
-                    Spacer()
+                    .padding(20)
                 }
-                .onAppear {
-                    vm.fetchData(id: id)
-                }
-                .padding(20)
-                
+                .foregroundStyle(Color.white)
             }
-            .foregroundStyle(Color.white)
+    
+        }
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+        
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    dismiss()
+                }, label: {
+                    HStack(spacing: 3) {
+                        Image(systemName: "chevron.backward")
+                            .padding()
+                            .background(Color.customGray.opacity(0.5))
+                            .clipShape(Circle())
+
+                    }
+                    .tint(.white)
+                })
+            }
         }
     }
 }
 
 #Preview {
-    DetailView(id: 2)
+    DetailView(id: 4)
 }

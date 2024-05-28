@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 enum NetworkError: Error, LocalizedError {
     case badUrl
     case badRequest(String)

@@ -10,10 +10,10 @@ import Foundation
 class MainViewModel: ObservableObject {
     
     private let repository = CharacterRepository()
-    
+    private var allData: [Results] = []
     @Published var filteredData: [Results] = []
     
-    private var allData: [Results] = []
+    @Published var checkData: [CheckModel] = []
     
     func search(text: String) {
         if !text.isEmpty {

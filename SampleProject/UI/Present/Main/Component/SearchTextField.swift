@@ -19,7 +19,6 @@ struct SearchTextField: View {
                 .frame(width: 18)
             
             TextField("", text: $text, prompt: Text("Search").foregroundStyle(Color.customPurple.opacity(0.5)))
- 
         }
         .padding(12)
         .background(Color.customGray.opacity(0.8))

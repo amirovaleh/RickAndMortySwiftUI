@@ -9,7 +9,7 @@ import Foundation
 
 final class DetailViewModel: ObservableObject {
     
-    @Published var character: Results = Results(id: nil, name: "", status: "", species: "", type: "", gender: "", origin: nil, location: nil, image: "", episode: [], url: "", created: "")
+    @Published var character: Results = Results(id: nil, name: "", status: "", species: "", type: "", gender: "", origin: nil, location: nil, image: "", episode: [], url: "", created: "", isMarked: false)
     
     private var repository = CharacterRepository()
         

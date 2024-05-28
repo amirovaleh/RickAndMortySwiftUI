@@ -17,6 +17,7 @@ struct Results: Codable, Identifiable {
     let episode: [String]?
     let url: String?
     let created: String?
+    var isMarked: Bool?
 }
 
 // MARK: - Location
