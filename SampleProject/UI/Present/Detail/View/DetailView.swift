@@ -11,11 +11,14 @@ import SDWebImageSwiftUI
 struct DetailView: View {
     
     @StateObject var vm = DetailViewModel()
-    @Environment(\.dismiss) private var dismiss
-
     var id: Int
+    @State var isOn: Bool = false
+    
+    @Environment(\.dismiss) private var dismiss
+    
+    
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack {
                 Color.customPurple
                     .ignoresSafeArea()
@@ -37,12 +40,10 @@ struct DetailView: View {
                 }
                 .foregroundStyle(Color.white)
             }
-    
         }
         .navigationBarBackButtonHidden(true)
         .toolbar {
-        
-            ToolbarItem(placement: .navigationBarLeading) {
+            ToolbarItemGroup(placement: .navigationBarLeading) {
                 Button(action: {
                     dismiss()
                 }, label: {
@@ -51,15 +52,26 @@ struct DetailView: View {
                             .padding()
                             .background(Color.customGray.opacity(0.5))
                             .clipShape(Circle())
-
                     }
                     .tint(.white)
                 })
             }
+            
+            ToolbarItem(placement: .navigationBarTrailing) {
+                
+                Toggle("", isOn: $vm.isOn)
+                    .toggleStyle(ToggleBookMark())
+                    .onChange(of: vm.isOn) { oldValue, newValue in
+                        vm.checkAndSet(id: self.id, isMarked: newValue)
+                    }
+            }
+        }
+        .onAppear {
+            vm.fetchCheckMark(id: self.id)
         }
     }
 }
 
 #Preview {
-    DetailView(id: 4)
+    DetailView(id: 0)
 }

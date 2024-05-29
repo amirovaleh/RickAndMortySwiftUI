@@ -10,8 +10,10 @@ import SDWebImageSwiftUI
 
 
 struct GridView: View {
-    let characterItem: [Results]
+ 
     let columns = [GridItem(.adaptive(minimum: 120), spacing: 15)]
+    
+    @Binding var characterItem: [Results]
     
     var body: some View {
         LazyVGrid(columns: columns , content: {
@@ -42,10 +44,16 @@ struct GridView: View {
                                 }
                             }
                             .offset(CGSize(width: -70, height: -70))
+                            
+                            Image(systemName: item.isMarked ?? false ? "bookmark.fill" : "bookmark")
+                                
+                                .resizable()
+                                .frame(width: 20,height: 30)
+                                .offset(CGSize(width: 65, height: -65))
+                                .foregroundStyle(.black)
                         }
                         Text(item.name ?? "")
                         Text(item.species ?? "")
-                        
                     }
                     .foregroundStyle(.white)
                 }

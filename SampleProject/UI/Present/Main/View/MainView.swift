@@ -21,11 +21,18 @@ struct MainView: View {
                     .onChange(of: text) { oldValue, newValue in
                         vm.search(text: newValue)
                     }
-                GridView(characterItem: vm.filteredData)
+                GridView(characterItem: $vm.filteredData)
             }
             .background(Color.customPurple)
             .onAppear {
                 vm.fetchData()
+            }
+            .onChange(of: vm.isMarkedData) { oldValue, newValue in
+                newValue.forEach { result in
+                    if let index = vm.filteredData.firstIndex(where: {$0.id == result.id}) {
+                        self.vm.filteredData[index].isMarked = result.isMarked
+                    }
+                }
             }
         }
     }

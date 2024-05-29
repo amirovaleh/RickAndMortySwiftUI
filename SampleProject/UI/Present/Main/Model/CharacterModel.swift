@@ -10,8 +10,7 @@ import Foundation
 struct CharacterModel: Codable {
     var results: [Results]
 }
-
-struct CheckModel: Identifiable {
+struct CheckModel: Identifiable, Codable, Equatable {
     var id: Int
     var isMarked: Bool = false
 }
