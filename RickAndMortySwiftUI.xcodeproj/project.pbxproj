@@ -57,7 +57,7 @@
 		5FDC4F542BFF53BA00A67571 /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 		5FF59F042C0061C5006166C0 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		5FF59F0C2C008AFA006166C0 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
-		5FFE41D22BFF0DC0004A8B37 /* SampleProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FFE41D22BFF0DC0004A8B37 /* RickAndMortySwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMortySwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FFE41D52BFF0DC0004A8B37 /* SampleProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleProjectApp.swift; sourceTree = "<group>"; };
 		5FFE41D72BFF0DC0004A8B37 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		5FFE41D92BFF0DC2004A8B37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -273,7 +273,7 @@
 		5FFE41C92BFF0DC0004A8B37 = {
 			isa = PBXGroup;
 			children = (
-				5FFE41D42BFF0DC0004A8B37 /* SampleProject */,
+				5FFE41D42BFF0DC0004A8B37 /* RickAndMortySwiftUI */,
 				5FFE41D32BFF0DC0004A8B37 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -281,12 +281,12 @@
 		5FFE41D32BFF0DC0004A8B37 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5FFE41D22BFF0DC0004A8B37 /* SampleProject.app */,
+				5FFE41D22BFF0DC0004A8B37 /* RickAndMortySwiftUI.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5FFE41D42BFF0DC0004A8B37 /* SampleProject */ = {
+		5FFE41D42BFF0DC0004A8B37 /* RickAndMortySwiftUI */ = {
 			isa = PBXGroup;
 			children = (
 				5FDC4F582BFF5CEB00A67571 /* UI */,
@@ -294,7 +294,7 @@
 				5FFE41E32BFF0DCA004A8B37 /* Core */,
 				5FFE41DB2BFF0DC2004A8B37 /* Preview Content */,
 			);
-			path = SampleProject;
+			path = RickAndMortySwiftUI;
 			sourceTree = "<group>";
 		};
 		5FFE41DB2BFF0DC2004A8B37 /* Preview Content */ = {
@@ -327,9 +327,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5FFE41D12BFF0DC0004A8B37 /* SampleProject */ = {
+		5FFE41D12BFF0DC0004A8B37 /* RickAndMortySwiftUI */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5FFE41E02BFF0DC2004A8B37 /* Build configuration list for PBXNativeTarget "SampleProject" */;
+			buildConfigurationList = 5FFE41E02BFF0DC2004A8B37 /* Build configuration list for PBXNativeTarget "RickAndMortySwiftUI" */;
 			buildPhases = (
 				5FFE41CE2BFF0DC0004A8B37 /* Sources */,
 				5FFE41CF2BFF0DC0004A8B37 /* Frameworks */,
@@ -339,12 +339,12 @@
 			);
 			dependencies = (
 			);
-			name = SampleProject;
+			name = RickAndMortySwiftUI;
 			packageProductDependencies = (
 				5FF59F0A2C00720A006166C0 /* SDWebImageSwiftUI */,
 			);
 			productName = SampleProject;
-			productReference = 5FFE41D22BFF0DC0004A8B37 /* SampleProject.app */;
+			productReference = 5FFE41D22BFF0DC0004A8B37 /* RickAndMortySwiftUI.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -362,7 +362,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5FFE41CD2BFF0DC0004A8B37 /* Build configuration list for PBXProject "SampleProject" */;
+			buildConfigurationList = 5FFE41CD2BFF0DC0004A8B37 /* Build configuration list for PBXProject "RickAndMortySwiftUI" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -378,7 +378,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5FFE41D12BFF0DC0004A8B37 /* SampleProject */,
+				5FFE41D12BFF0DC0004A8B37 /* RickAndMortySwiftUI */,
 			);
 		};
 /* End PBXProject section */
@@ -555,7 +555,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SampleProject/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"RickAndMortySwiftUI/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -569,7 +569,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.amirovaleh.SampleProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.amirovaleh.RickAndMortySwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -588,7 +588,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SampleProject/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"RickAndMortySwiftUI/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -602,7 +602,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.amirovaleh.SampleProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.amirovaleh.RickAndMortySwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -617,7 +617,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5FFE41CD2BFF0DC0004A8B37 /* Build configuration list for PBXProject "SampleProject" */ = {
+		5FFE41CD2BFF0DC0004A8B37 /* Build configuration list for PBXProject "RickAndMortySwiftUI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5FFE41DE2BFF0DC2004A8B37 /* Debug */,
@@ -626,7 +626,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5FFE41E02BFF0DC2004A8B37 /* Build configuration list for PBXNativeTarget "SampleProject" */ = {
+		5FFE41E02BFF0DC2004A8B37 /* Build configuration list for PBXNativeTarget "RickAndMortySwiftUI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5FFE41E12BFF0DC2004A8B37 /* Debug */,

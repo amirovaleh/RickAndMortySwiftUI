@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5FFE41D12BFF0DC0004A8B37"
-               BuildableName = "SampleProject.app"
-               BlueprintName = "SampleProject"
-               ReferencedContainer = "container:SampleProject.xcodeproj">
+               BuildableName = "RickAndMortySwiftUI.app"
+               BlueprintName = "RickAndMortySwiftUI"
+               ReferencedContainer = "container:RickAndMortySwiftUI.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5FFE41D12BFF0DC0004A8B37"
-            BuildableName = "SampleProject.app"
-            BlueprintName = "SampleProject"
-            ReferencedContainer = "container:SampleProject.xcodeproj">
+            BuildableName = "RickAndMortySwiftUI.app"
+            BlueprintName = "RickAndMortySwiftUI"
+            ReferencedContainer = "container:RickAndMortySwiftUI.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5FFE41D12BFF0DC0004A8B37"
-            BuildableName = "SampleProject.app"
-            BlueprintName = "SampleProject"
-            ReferencedContainer = "container:SampleProject.xcodeproj">
+            BuildableName = "RickAndMortySwiftUI.app"
+            BlueprintName = "RickAndMortySwiftUI"
+            ReferencedContainer = "container:RickAndMortySwiftUI.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
